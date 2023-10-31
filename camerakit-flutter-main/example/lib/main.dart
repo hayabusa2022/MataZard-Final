@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Camera Kit'),
+        title: const Text('Camera Kit TEST TEST TEST'),
       ),
       body: Center(
         child: Column(
