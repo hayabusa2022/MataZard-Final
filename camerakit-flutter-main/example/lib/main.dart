@@ -73,7 +73,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Camera Kit TEST TEST TEST'),
+        title: const Text('Camera Kit '),
       ),
       body: Center(
         child: Column(
@@ -86,7 +86,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
                   setState(() {});
                   getGroupLenses();
                 },
-                child: const Text("Show Lens List")),
+                child: const Text("Safety Information and tips")),
             ElevatedButton(
                 onPressed: () {
                   initCameraKit();
@@ -96,6 +96,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
           ],
         ),
       ),
+
     );
   }
 
