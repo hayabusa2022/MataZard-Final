@@ -1,12 +1,10 @@
 import 'package:camerakit_flutter/lens_model.dart';
 import 'package:flutter/material.dart';
 
-/// A widget for displaying a list of lenses.
-
 class LensListView extends StatefulWidget {
   final List<Lens> lensList;
 
-  const LensListView({super.key, required this.lensList});
+  const LensListView({Key? key, required this.lensList}) : super(key: key);
 
   @override
   State<LensListView> createState() => _LensListWidgetState();
@@ -17,45 +15,35 @@ class _LensListWidgetState extends State<LensListView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lens List'),
+        title: const Text('Information and Tips'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          widget.lensList.isNotEmpty
-              ? Expanded(
-                  child: ListView.separated(
-                      itemCount: widget.lensList.length,
-                      separatorBuilder: (BuildContext context, int index) =>
-                          const Divider(),
-                      itemBuilder: (context, index) => Padding(
-                            padding: const EdgeInsets.all(2.0),
-                            child: Row(
-                              children: [
-                                Image.network(
-                                  widget.lensList[index].thumbnail?[0] ?? "",
-                                  width: 70,
-                                  height: 70,
-                                ),
-                                const SizedBox(
-                                  width: 20,
-                                ),
-                                Text(
-                                  widget.lensList[index].name!,
-                                  style: const TextStyle(
-                                      fontSize: 16,
-                                      fontStyle: FontStyle.italic),
-                                )
-                              ],
-                            ),
-                          )),
-                )
-              : Container()
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: List.generate(10, (index) {
+            return Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                children: [
+                  ListTile(
+                    leading: const Icon(Icons.arrow_drop_down_circle),
+                    title: Text('Card title ${index + 1}'),
+                    subtitle: Text(
+                      'Secondary Text',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      'Greyhound divisively hello coldly wonderfully marginally far upon excluding.',
+                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          }),
+        ),
       ),
     );
   }
