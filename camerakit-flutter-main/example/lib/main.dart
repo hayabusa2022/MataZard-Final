@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:camerakit_flutter/configuration_camerakit.dart';
 import 'package:camerakit_flutter_example/media_result_screen.dart';
 import 'package:camerakit_flutter_example/lens_list_screen.dart';
@@ -8,10 +9,12 @@ import 'package:flutter/services.dart';
 import 'package:camerakit_flutter/camerakit_flutter.dart';
 import 'package:camerakit_flutter/lens_model.dart';
 import 'constants.dart';
+import 'package:camerakit_flutter_example/contact_details.dart';
 
 void main() {
   runApp(const MaterialApp(
     home: MyApp(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
@@ -92,11 +95,16 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
                   initCameraKit();
                 },
                 child: const Text("Open CameraKit")),
-            isLensListPressed ? const CircularProgressIndicator() : Container()
+            isLensListPressed ? const CircularProgressIndicator() : Container(),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyContact()));
+                },
+                child: const Text("Contact")),
           ],
         ),
       ),
-
     );
   }
 
