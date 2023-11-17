@@ -10,6 +10,8 @@ import 'package:camerakit_flutter/camerakit_flutter.dart';
 import 'package:camerakit_flutter/lens_model.dart';
 import 'constants.dart';
 import 'package:camerakit_flutter_example/contact_details.dart';
+import 'package:camerakit_flutter_example/safety_info.dart';
+import 'package:camerakit_flutter_example/user_guide.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -76,7 +78,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Camera Kit '),
+        title: const Text('Main Menu'),
       ),
       body: Center(
         child: Column(
@@ -89,12 +91,12 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
                   setState(() {});
                   getGroupLenses();
                 },
-                child: const Text("Safety Information and tips")),
+                child: const Text("Lens List")),
             ElevatedButton(
                 onPressed: () {
                   initCameraKit();
                 },
-                child: const Text("Open CameraKit")),
+                child: const Text("Scan Now")),
             isLensListPressed ? const CircularProgressIndicator() : Container(),
             ElevatedButton(
                 onPressed: () {
@@ -102,6 +104,18 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
                       MaterialPageRoute(builder: (context) => MyContact()));
                 },
                 child: const Text("Contact")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MySafety()));
+                },
+                child: const Text("Safety Info.")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyGuide()));
+                },
+                child: const Text("User Guide")),
           ],
         ),
       ),

@@ -3,11 +3,13 @@
 class Constants {
   /// List of group IDs for Camera Kit (TODO: Fill group ID here).
 
-  static const List<String> groupIdList = ['aabbc32b-099f-405b-b9e0-bc3bf43348db'];
+  static const List<String> groupIdList = [
+    'aabbc32b-099f-405b-b9e0-bc3bf43348db'
+  ];
 
   /// optional: if you want to get single lens you can set it otherwise set empty string
   /// The lens ID for Camera Kit (TODO: Fill lens ID here).
-  static const cameraKitLensId = '0841cd55-fe4d-48c6-b124-4ee36de61d54';
+  static const cameraKitLensId = '9e851ce3-1a99-41c6-ba46-38ef38034c18';
 
   /// The API token for Camera Kit in the staging environment (TODO: Fill API token here).
 
