@@ -107,7 +107,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MySafety()));
+                      MaterialPageRoute(builder: (context) => Safetytips()));
                 },
                 child: const Text("Safety Info.")),
             ElevatedButton(
