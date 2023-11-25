@@ -79,6 +79,8 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Main Menu'),
+        backgroundColor: Colors.orangeAccent,
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -91,31 +93,61 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
                   setState(() {});
                   getGroupLenses();
                 },
-                child: const Text("Lens List")),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Lens List",
+                  style: TextStyle(fontSize: 29),
+                )),
             ElevatedButton(
                 onPressed: () {
                   initCameraKit();
                 },
-                child: const Text("Scan Now")),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Scan Now",
+                  style: TextStyle(fontSize: 26),
+                )),
             isLensListPressed ? const CircularProgressIndicator() : Container(),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MyContact()));
                 },
-                child: const Text("Contact")),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Contact",
+                  style: TextStyle(fontSize: 33),
+                )),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Safetytips()));
                 },
-                child: const Text("Safety Info.")),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Safety Info.",
+                  style: TextStyle(fontSize: 23),
+                )),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => MyGuide()));
                 },
-                child: const Text("User Guide")),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Tutorial",
+                  style: TextStyle(fontSize: 34),
+                )),
           ],
         ),
       ),
